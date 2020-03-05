@@ -26,8 +26,15 @@ class Stack {
   pop() {
     const node = this.top; //start at the top
     this.top = node.next; // set the top to the next node
-    return node.data; // return the data from the first "top"
+    return node.data; // return the data from the first "top"?
   }
 }
 
-module.exports = Stack;
+const starTrek = new Stack();
+
+starTrek.push("Kirk");
+starTrek.push("Spock");
+starTrek.push("Mcoy");
+starTrek.push("Scotty");
+
+console.log(starTrek);
