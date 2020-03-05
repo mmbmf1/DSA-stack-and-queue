@@ -30,6 +30,39 @@ class Stack {
   }
 }
 
+const peek = stack => {
+  if (!stack.top) {
+    console.log("This ain't the top");
+    return;
+  }
+  console.log(`Top of stack: `, stack.top.data);
+  return stack.top;
+};
+
+const isEmpty = stack => {
+  if (!stack.top) {
+    console.log("Stack empty");
+    return true;
+  }
+  console.log("Stack not empty");
+  return false;
+};
+
+const display = stack => {
+  if (!stack.top) {
+    console.log("No stack here");
+    return;
+  }
+
+  let current = stack.top;
+  while (current !== null) {
+    console.log(current.data);
+    current = current.next;
+  }
+
+  return;
+};
+
 const starTrek = new Stack();
 
 starTrek.push("Kirk");
@@ -37,4 +70,13 @@ starTrek.push("Spock");
 starTrek.push("Mcoy");
 starTrek.push("Scotty");
 
-console.log(starTrek);
+// console.log(starTrek);
+
+peek(starTrek);
+isEmpty(starTrek);
+display(starTrek);
+
+// starTrek.pop();
+// starTrek.pop();
+
+// console.log(starTrek);
